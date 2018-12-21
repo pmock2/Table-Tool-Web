@@ -6,8 +6,9 @@
     height: 32px;
     background: #0566ad;
     color: white;
-    position: absolute;
+    position: fixed;
     padding: 0 10px;
+    z-index: 1;
 }
 
 .header-section, .header-title {

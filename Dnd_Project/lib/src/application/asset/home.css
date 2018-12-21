@@ -1,0 +1,34 @@
+.home-page {
+    background: #028090;
+    background: radial-gradient(circle, #028090 0%, #026676 75%) no-repeat;
+    color: white;
+}
+
+.intro {
+    height: calc(100vh - 32px);
+}
+
+.title-container {
+    width: 100%;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    height: auto;
+}
+
+.page-title {
+    margin-top: 5%;
+    text-align: center;
+    font-size: 10vw;
+    height: fit-content;
+    position: relative;
+}
+
+.page-sub-title {
+    margin-top: 5%;
+    position: relative;
+    text-align: center;
+    font-size: 2.5vw;
+    height: fit-content;
+}
