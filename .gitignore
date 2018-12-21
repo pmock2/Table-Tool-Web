@@ -1,4 +1,4 @@
-.dart_tool
-.dart
-.idea
-.packages
+*.dart_tool/
+*.dart/
+*.idea/
+*.packages

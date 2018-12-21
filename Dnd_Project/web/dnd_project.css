@@ -1,0 +1,15 @@
+body {
+  /*background: radial-gradient(circle, #0400a5 0%, #04005d 75%) no-repeat;*/
+  background: #eee;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1.2em;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+}
+
+h1, p {
+  color: #333;
+}

@@ -1,0 +1,32 @@
+.header-container {
+    display: flex;
+    left: 0;
+    top: 0;
+    right: 0;
+    height: 32px;
+    background: #0566ad;
+    color: white;
+    position: absolute;
+    padding: 0 10px;
+}
+
+.header-section, .header-title {
+    color: white;
+    width: fit-content;
+    display: inline-block;
+    padding: 8px 8px 0 8px;
+    cursor: pointer;
+    height: 24px;
+    position: relative;
+    transition: 0.2s;
+}
+
+.header-title {
+    margin-right: 20px;
+    font-weight: bold;
+    background: #0566ad !important;
+}
+.header-section:hover {
+    background: #028090;
+    /*color: black;*/
+}
