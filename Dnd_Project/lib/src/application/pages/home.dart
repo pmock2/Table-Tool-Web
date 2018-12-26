@@ -14,6 +14,7 @@ class HomePage {
           <div class="title-container">
             <div class="page-title">The Table Tool</div>
             <div class="page-sub-title">A Tool for DMs and Their Players</div>
+            <div class="get-started-button">Get Started</div>
           </div>
         </div>
         <div class="page-section">

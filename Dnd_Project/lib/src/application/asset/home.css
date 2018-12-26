@@ -9,16 +9,21 @@
 }
 
 .title-container {
-    width: 100%;
     position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-50%);
+    display: flex;
     height: auto;
+    left: 0;
+    right: 0;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    top: 34%;
+    align-content: center;
+    transform: translateY(-50%);
 }
 
 .page-title {
-    margin-top: 5%;
+    margin-top: 10%;
     text-align: center;
     font-size: 10vw;
     height: fit-content;
@@ -26,11 +31,28 @@
 }
 
 .page-sub-title {
-    margin-top: 5%;
     position: relative;
     text-align: center;
     font-size: 2.8vw;
     height: fit-content;
+}
+
+.get-started-button {
+    margin-top: 8%;
+    text-align: center;
+    font-size: 2vw;
+    height: 2vw;
+    width: fit-content;
+    background: #0566ad;
+    cursor: pointer;
+    padding: 10px 20px;
+    border-radius: 4px;
+    color: rgba(255,255,255,0.8);
+    transition: 0.2s;
+}
+
+.get-started-button:hover {
+    color: white;
 }
 
 .page-section {
