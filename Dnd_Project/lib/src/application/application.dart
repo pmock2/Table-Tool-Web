@@ -21,6 +21,7 @@ class Application {
 
 
   void init() {
+    document.querySelector('#loader-roller').remove();
     shell = document.querySelector('#shell');
 
     Map configuration = {
