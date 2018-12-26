@@ -29,6 +29,31 @@
     margin-top: 5%;
     position: relative;
     text-align: center;
-    font-size: 2.5vw;
+    font-size: 2.8vw;
     height: fit-content;
+}
+
+.page-section {
+    min-height: 400px;
+    background: white;
+    position: relative;
+    border-top: 1px solid #aaa;
+    border-bottom: 1px solid #aaa;
+}
+
+.page-section-title {
+    font-size: 2.8vw;
+    color: #444; 
+    position: relative;
+    text-align: center;
+    top: 5vh;
+}
+
+.page-section-content {
+    display: flex;
+    bottom: 0;
+    position: absolute;
+    left: 5%;
+    right: 5%;
+    top: 10vh;
 }

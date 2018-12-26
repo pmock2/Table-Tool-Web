@@ -24,7 +24,7 @@ class Application {
     shell = document.querySelector('#shell');
 
     Map configuration = {
-      'Home' : alertTest
+      'Home' : '/index.html'
     };
     header = Header(configuration, 'Table Tool');
     shell.append(header.element);
