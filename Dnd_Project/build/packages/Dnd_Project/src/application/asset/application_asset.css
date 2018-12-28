@@ -1,0 +1,22 @@
+@import "home.css";
+
+#content {
+    margin-top: 32px;
+}
+
+*::-webkit-scrollbar {
+    width: 6px !important;
+    height: 6px !important;
+    border-radius: 5px !important;
+  }
+  
+  *::-webkit-scrollbar-thumb {
+    background-color: #4c535d !important;
+    border-radius: 5px !important;
+  }
+  
+  *::-webkit-scrollbar-track {
+    background-color: #1b232d !important;
+    border-radius: 5px !important;
+  }
+  
