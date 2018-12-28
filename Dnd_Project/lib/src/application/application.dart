@@ -28,6 +28,15 @@ class Application {
       'Home' : '/index.html'
     };
     header = Header(configuration, 'Table Tool');
+
+    String userMarkup = '''
+      <div class="fas fa-user user-icon"></div>
+      <div class="user-name">Example User</div>
+    ''';
+    DivElement userContainer = DivElement()
+      ..classes.add('user-container')
+      ..setInnerHtml(userMarkup, treeSanitizer: NullTreeSanitizer());
+    header.element.append(userContainer);
     shell.append(header.element);
     if (goToHome) {
       HomePage();
