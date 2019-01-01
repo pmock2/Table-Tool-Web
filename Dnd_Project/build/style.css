@@ -1,3 +1,4 @@
+@import "packages/Dnd_Project/src/font-awesome/all.css";
 body {
   font-family: 'Open Sans', sans-serif;
   font-size: 14px;
@@ -31,7 +32,7 @@ h1, p {
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: black;
+  background: white;
   margin: -3px 0 0 -3px;
 }
 

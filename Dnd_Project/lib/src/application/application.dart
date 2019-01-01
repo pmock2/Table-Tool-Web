@@ -5,13 +5,14 @@ import 'dart:html';
 import 'package:Dnd_Project/src/component.dart';
 
 part 'pages/home.dart';
+part 'pages/login-sign-up.dart';
 
 class Application {
   Header header;
   DivElement shell = DivElement();
-  bool goToHome = false;
+  String _page;
 
-  Application([this.goToHome]) {
+  Application(this._page) {
     init();
   }
 
@@ -21,11 +22,15 @@ class Application {
 
 
   void init() {
-    document.querySelector('#loader-roller').remove();
+    Element loader = document.querySelector('#loader-roller');
+    if (loader != null) {
+      loader.remove();
+    }
     shell = document.querySelector('#shell');
 
     Map configuration = {
-      'Home' : '/index.html'
+      'Home' : '/index.html',
+      'Log in' : '/login.html'
     };
     header = Header(configuration, 'Table Tool');
 
@@ -38,8 +43,14 @@ class Application {
       ..setInnerHtml(userMarkup, treeSanitizer: NullTreeSanitizer());
     header.element.append(userContainer);
     shell.append(header.element);
-    if (goToHome) {
-      HomePage();
+
+    switch (_page) {
+      case 'home' :
+        HomePage();
+        break;
+      case 'login-sign-up':
+        LoginSignUpPage();
+        break;
     }
   }
 }
