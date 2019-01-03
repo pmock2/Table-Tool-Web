@@ -10,11 +10,11 @@ class HomePage {
   void init() {
     String markup = '''
       <div class="home-page">
-        <div class="intro">
+        <div class="intro" style="opacity: 0;">
           <div class="title-container">
             <div class="page-title">The Table Tool</div>
-            <div class="page-sub-title">A Tool for DMs and Their Players</div>
-            <div class="get-started-button">Get Started</div>
+            <div class="page-sub-title" style="opacity: 0">A Tool for DMs and Their Players</div>
+            <div class="get-started-button" style="opacity: 0">Get Started</div>
           </div>
         </div>
         <div class="page-section">
@@ -32,5 +32,17 @@ class HomePage {
 
     content.setInnerHtml(markup, treeSanitizer: NullTreeSanitizer());
     shell.append(content);
+
+    Timer(const Duration(milliseconds: 150), () {
+      content.querySelector('.intro').style.opacity = '1';
+    });
+
+    Timer(const Duration(milliseconds: 650), () {
+      content.querySelector('.page-sub-title').style.opacity = '1';
+    });
+
+    Timer(const Duration(milliseconds: 1150), () {
+      content.querySelector('.get-started-button').style.opacity = '1';
+    });
   }
 }

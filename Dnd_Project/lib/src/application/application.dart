@@ -1,6 +1,7 @@
 library application;
 
 import 'dart:html';
+import 'dart:async';
 
 import 'package:Dnd_Project/src/component.dart';
 
