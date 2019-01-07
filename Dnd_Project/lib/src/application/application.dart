@@ -6,7 +6,8 @@ import 'dart:async';
 import 'package:Dnd_Project/src/component.dart';
 
 part 'pages/home.dart';
-part 'pages/login-sign-up.dart';
+part 'pages/login.dart';
+part 'pages/signup.dart';
 
 class Application {
   Header header;
@@ -49,8 +50,11 @@ class Application {
       case 'home' :
         HomePage();
         break;
-      case 'login-sign-up':
-        LoginSignUpPage();
+      case 'login':
+        LoginPage();
+        break;
+      case 'signup' :
+        SignUpPage();
         break;
     }
   }

@@ -13,12 +13,12 @@
 .header-title {
     margin-right: 20px;
     font-weight: bold;
-    background: #0566ad !important;
+    background: #003b70 !important;
 }
 
 .header-container {
     width: 100vw;
-    background: #0566ad;
+    background: #003b70;
     height: 31px;
     display: flex;
     left: 0;
@@ -33,7 +33,7 @@
     color: #eee;
     display: inline-block;
     margin-right: 10px;
-    border: 2px #0566ad solid;
+    border: 2px #003b70 solid;
     padding: 3px 8px;
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
@@ -54,11 +54,11 @@
 }
 
 .header_option:hover {
-    background: #028090;
+    background: #005bb3;
 }
 
 .header_option[data-is_open=true] {
-    background: #028090;
+    background: #005bb3;
 }
 
 .header_option[data-is_open=true] ul {
