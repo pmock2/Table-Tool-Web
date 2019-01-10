@@ -1,4 +1,4 @@
-# template-routing-store
+# The Table Tool
 
 ## Project setup
 ```
