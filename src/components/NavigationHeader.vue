@@ -1,6 +1,6 @@
 <template>
   <span>
-    <v-navigation-drawer app v-model="drawer" class="grey darken-1" dark disable-resize-watcher>
+    <v-navigation-drawer app v-model="drawer" dark disable-resize-watcher>
       <v-list>
         <template v-for="(item, index) in items">
           <v-list-tile :key="index" :to="item.id">
@@ -10,7 +10,7 @@
         </template>
       </v-list>
     </v-navigation-drawer>
-    <v-toolbar app color="grey darken-2" dark>
+    <v-toolbar app dark class="nav-header">
       <v-toolbar-side-icon class="hidden-md-and-up" @click="drawer = !drawer"></v-toolbar-side-icon>
       <v-spacer class="hidden-md-and-up"></v-spacer>
       <router-link to="/">
@@ -18,7 +18,7 @@
       </router-link>
       <v-spacer class="hidden-sm-and-down"></v-spacer>
       <v-btn flat class="hidden-sm-and-down" to="/sign-in">SIGN IN</v-btn>
-      <v-btn color="brown lighten-3" class="hidden-sm-and-down" to="/join">JOIN</v-btn>
+      <v-btn color="lighten-1" class="hidden-sm-and-down join-button" to="/join">JOIN</v-btn>
     </v-toolbar>
   </span>
 </template>
@@ -41,5 +41,13 @@ export default {
 a {
   color: white;
   text-decoration: none;
+}
+
+.nav-header {
+  background: #003b70;
+}
+
+.join-button {
+  background: #c72819 !important;
 }
 </style>
