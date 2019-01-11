@@ -16,7 +16,7 @@
           <input type="password" id="password" maxlength="100000" autocomplete="off" class="login-input">
         </div>
         <p class="forgot"><a class="login-link" href="forgot_pass.php">Forgot Password?</a></p>
-        <p><a class="login-link" href="/signup.html"><b>Not a member?</b></a></p>
+        <p><v-btn class="login-link" to="/join"><b>Not a member?</b></v-btn></p>
         <button id="loginbtn" class="login-button">Log In</button>
         <span id="status"></span>
       </div>
@@ -133,10 +133,13 @@ export default {
   }
 
   .login-link {
-    color: #179b77;
+    color: #179b77 !important;
     border: 0;
     outline: 0;
     text-decoration: none;
     font-weight: bold;
+    background: unset !important;
+    -webkit-box-shadow: unset !important;
+    box-shadow: unset !important;
   }
 </style>

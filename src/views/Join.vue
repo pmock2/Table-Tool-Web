@@ -27,7 +27,7 @@
           </label>
           <input type="password" id="confrim-password" maxlength="100000" autocomplete="off" class="login-input">
         </div>
-        <p><a class="login-link" href="/login.html"><b>Already a member?</b></a></p>
+        <p><v-btn class="login-link" to="/sign-in"><b>Already a member?</b></v-btn></p>
         <button id="loginbtn" class="login-button">SIGN UP NOW</button>
         <span id="status"></span>
       </div>
@@ -143,10 +143,13 @@ export default {
   }
 
   .login-link {
-    color: #179b77;
+    color: #179b77 !important;
     border: 0;
     outline: 0;
     text-decoration: none;
     font-weight: bold;
+    background: unset !important;
+    -webkit-box-shadow: unset !important;
+    box-shadow: unset !important;
   }
 </style>
