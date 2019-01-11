@@ -4,7 +4,7 @@
       <div class="title-container">
         <div class="page-title">The Table Tool</div>
         <div class="page-sub-title">A Tool for DMs and Their Players</div>
-        <div class="get-started-button">Get Started</div>
+        <v-btn class="get-started-button" to="/join">Get Started</v-btn>
       </div>
     </div>
     <div class="page-section">
@@ -70,21 +70,21 @@ export default {
 .get-started-button {
     margin-top: 8%;
     text-align: center;
-    font-size: 2.5vh;
+    font-size: 2.5vh !important;
     height: auto;
     width: fit-content;
-    background: #c72819;
+    background: #c72819 !important;
     cursor: pointer;
     padding: 2vh 3vh;
     border-radius: 4px;
-    color: rgba(255,255,255,0.9);
+    color: rgba(255,255,255,0.9) !important;
     transition: opacity 1.5s, color 0.2s, box-shadow 0.2s;
-    box-shadow: 0px 1px 8px 1px rgba(0,0,0,0.7);
+    box-shadow: 0 1px 8px 1px rgba(0,0,0,0.7) !important;
 }
 
 .get-started-button:hover {
-    color: white;
-    box-shadow: 0 3px 10px 2px rgba(0,0,0,0.6);;
+    color: white !important;
+    box-shadow: 0 3px 10px 2px rgba(0,0,0,0.6) !important;
 }
 
 .page-section {
