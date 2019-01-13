@@ -4,28 +4,28 @@
       <div class="login-child-container">
         <h1 class="login-title">Sign Up For Table Tool</h1>
         <div class="login-input-field">
+          <input placeholder=" " type="text" id="email" maxlength="88" autocomplete="off" class="login-input">
           <label class="login-label">
-            Email<span class="required-star">*</span>
+            Email
           </label>
-          <input type="text" id="email" maxlength="88" autocomplete="off" class="login-input">
         </div>
         <div class="login-input-field">
+          <input placeholder=" " type="text" id="text" maxlength="88" autocomplete="off" class="login-input">
           <label class="login-label">
-            Username<span class="required-star">*</span>
+            Username
           </label>
-          <input type="text" id="text" maxlength="88" autocomplete="off" class="login-input">
         </div>
         <div class="login-input-field">
+          <input placeholder=" " type="password" id="password" maxlength="100000" autocomplete="off" class="login-input">
           <label class="login-label">
-            Password<span class="required-star">*</span>
+            Password
           </label>
-          <input type="password" id="password" maxlength="100000" autocomplete="off" class="login-input">
         </div>
         <div class="login-input-field">
+          <input placeholder=" " type="password" id="confrim-password" maxlength="100000" autocomplete="off" class="login-input"/>
           <label class="login-label">
-            Confirm Password<span class="required-star">*</span>
+            Confirm Password
           </label>
-          <input type="password" id="confrim-password" maxlength="100000" autocomplete="off" class="login-input">
         </div>
         <p><v-btn class="login-link" to="/sign-in"><b>Already a member?</b></v-btn></p>
         <button id="loginbtn" class="login-button">SIGN UP NOW</button>
@@ -38,7 +38,10 @@
 <script>
 export default {
   name: "join",
-  components: {}
+  components: {},
+  methods: {
+
+  }
 };
 </script>
 <style>
@@ -92,7 +95,7 @@ export default {
     transition: all 0.25s ease;
     pointer-events: none;
     font-size: 22px;
-    top: 6px;
+    top: 3px;
   }
 
   .required-star {
@@ -105,13 +108,33 @@ export default {
     display: block;
     width: 100%;
     height: 100%;
-    padding: 10px;
+    padding: 10px 10px 2px 10px;
     background: none;
     border: 1px solid #a0b3b0;
     color: #ffffff;
     border-radius: 0;
+    -webkit-transition: border-color .25s ease, -webkit-box-shadow .25s ease;
+    transition: border-color .25s ease, -webkit-box-shadow .25s ease;
     transition: border-color .25s ease, box-shadow .25s ease;
+    transition: border-color .25s ease, box-shadow .25s ease, -webkit-box-shadow .25s ease;
     margin-left: -10px;
+    border-top: 0 !important;
+    border-left: 0 !important;
+    border-right: 0 !important;
+  }
+
+  .login-input:focus {
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    outline: 0 !important;
+  }
+
+  .login-input:focus + .login-label
+  ,.login-input:not(:placeholder-shown) + .login-label
+  {
+    top: -15px;
+    font-size: 12px;
   }
 
   .forgot {

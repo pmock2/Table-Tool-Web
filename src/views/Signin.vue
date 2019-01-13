@@ -4,18 +4,18 @@
       <div class="login-child-container">
         <h1 class="login-title">Welcome Back!</h1>
         <div class="login-input-field">
+          <input placeholder=" " type="text" id="email" maxlength="88" autocomplete="off" class="login-input">
           <label class="login-label">
-            Email<span class="required-star">*</span>
+            Email
           </label>
-          <input type="text" id="email" maxlength="88" autocomplete="off" class="login-input">
         </div>
         <div class="login-input-field">
+          <input placeholder=" " type="password" id="password" maxlength="100000" autocomplete="off" class="login-input">
           <label class="login-label">
-            Password<span class="required-star">*</span>
+            Password
           </label>
-          <input type="password" id="password" maxlength="100000" autocomplete="off" class="login-input">
         </div>
-        <p class="forgot"><a class="login-link" href="forgot_pass.php">Forgot Password?</a></p>
+        <p class="forgot"><a class="login-link">Forgot Password?</a></p>
         <p><v-btn class="login-link" to="/join"><b>Not a member?</b></v-btn></p>
         <button id="loginbtn" class="login-button">Log In</button>
         <span id="status"></span>
@@ -82,7 +82,7 @@ export default {
     transition: all 0.25s ease;
     pointer-events: none;
     font-size: 22px;
-    top: 6px;
+    top: 3px;
   }
 
   .required-star {
@@ -95,13 +95,33 @@ export default {
     display: block;
     width: 100%;
     height: 100%;
-    padding: 10px;
+    padding: 10px 10px 2px 10px;
     background: none;
     border: 1px solid #a0b3b0;
     color: #ffffff;
     border-radius: 0;
+    -webkit-transition: border-color .25s ease, -webkit-box-shadow .25s ease;
+    transition: border-color .25s ease, -webkit-box-shadow .25s ease;
     transition: border-color .25s ease, box-shadow .25s ease;
+    transition: border-color .25s ease, box-shadow .25s ease, -webkit-box-shadow .25s ease;
     margin-left: -10px;
+    border-top: 0 !important;
+    border-left: 0 !important;
+    border-right: 0 !important;
+  }
+
+  .login-input:focus {
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    outline: 0 !important;
+  }
+
+  .login-input:focus + .login-label
+  ,.login-input:not(:placeholder-shown) + .login-label
+  {
+    top: -15px;
+    font-size: 12px;
   }
 
   .forgot {
