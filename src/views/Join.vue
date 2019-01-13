@@ -11,6 +11,7 @@
             maxlength="88"
             autocomplete="off"
             class="login-input"
+            v-model="email"
           >
           <label class="login-label">Email</label>
         </div>
@@ -22,6 +23,7 @@
             maxlength="88"
             autocomplete="off"
             class="login-input"
+            v-model="userName"
           >
           <label class="login-label">Username</label>
         </div>
@@ -33,6 +35,7 @@
             maxlength="100000"
             autocomplete="off"
             class="login-input"
+            v-model="password"
           >
           <label class="login-label">Password</label>
         </div>
@@ -44,6 +47,7 @@
             maxlength="100000"
             autocomplete="off"
             class="login-input"
+            v-model="passwordConfirm"
           >
           <label class="login-label">Confirm Password</label>
         </div>
@@ -63,6 +67,14 @@
 export default {
   name: "join",
   components: {},
+  data: function() {
+    return {
+      userName: "",
+      email: "",
+      password: "",
+      passwordConfirm: ""
+    };
+  },
   methods: {
     signUp() {
       if (this.password !== this.passwordConfirm) {
@@ -70,15 +82,15 @@ export default {
         return;
       }
       var url = "http://localhost:3001/account/register";
-      var username = document.querySelector('#sign-up-form #username').value;
-      var email = document.querySelector('#sign-up-form #email').value;
-      var password = document.querySelector('#sign-up-form #password').value;
-      console.log(`username ${username}, password ${password}, email ${email}`)
+      // var username = document.querySelector("#sign-up-form #username").value;
+      // var email = document.querySelector("#sign-up-form #email").value;
+      // var password = document.querySelector("#sign-up-form #password").value;
+      // console.log(`username ${username}, password ${password}, email ${email}`);
 
       var data = {
-        userName: username,
-        password: password,
-        email: email
+        userName: this.userName,
+        password: this.password,
+        email: this.email
       };
 
       fetch(url, {
