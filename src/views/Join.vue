@@ -1,13 +1,12 @@
 <template>
   <div class="login-container">
     <div class="tab-content">
-      <div class="login-child-container" id="sign-up-form">
+      <div class="login-child-container">
         <h1 class="login-title">Sign Up For Table Tool</h1>
         <div class="login-input-field">
           <input
             placeholder=" "
             type="text"
-            id="email"
             maxlength="88"
             autocomplete="off"
             class="login-input"
@@ -19,7 +18,6 @@
           <input
             placeholder=" "
             type="text"
-            id="username"
             maxlength="88"
             autocomplete="off"
             class="login-input"
@@ -31,7 +29,6 @@
           <input
             placeholder=" "
             type="password"
-            id="password"
             maxlength="100000"
             autocomplete="off"
             class="login-input"
@@ -43,7 +40,6 @@
           <input
             placeholder=" "
             type="password"
-            id="confrim-password"
             maxlength="100000"
             autocomplete="off"
             class="login-input"
@@ -57,7 +53,7 @@
           </v-btn>
         </p>
         <button class="login-button" v-on:click="signUp">SIGN UP NOW</button>
-        <span id="status"></span>
+        <span></span>
       </div>
     </div>
   </div>
@@ -82,10 +78,6 @@ export default {
         return;
       }
       var url = "http://localhost:3001/account/register";
-      // var username = document.querySelector("#sign-up-form #username").value;
-      // var email = document.querySelector("#sign-up-form #email").value;
-      // var password = document.querySelector("#sign-up-form #password").value;
-      // console.log(`username ${username}, password ${password}, email ${email}`);
 
       var data = {
         userName: this.userName,
@@ -103,6 +95,7 @@ export default {
         .then(res => res.json())
         .then(response => console.log("Success:", JSON.stringify(response)))
         .catch(error => console.error("Error:", error));
+      //Handle response texts
     }
   }
 };
