@@ -53,20 +53,22 @@ export default {
   },
   methods: {
     login() {
-      var url = `http://localhost:3001/login?userName=${this.email}&password=${this.password}`;
+      var url = `http://127.0.0.1:3001/login?userName=${this.email}&password=${this.password}`;
       if (this.email === "" || this.password === "") {
         this.status = "Please fill out all forms";
       } else {
         fetch(url, {
           method: "GET", // or 'PUT'
           headers: {
-            "Content-Type": "application/json"
-          }
+            "Content-Type": "application/json",
+          },
+          credentials: 'include',
         })
           .then(res => {
             console.log(res.status);
             if (res.status === 200) {
               //good, go to dashboard
+              
               this.$router.push('dashboard');
             } else if (res.status === 400) {
               //bad login
