@@ -14,19 +14,19 @@
         <v-btn class="button-B" >Button B</v-btn>
         <v-btn class="button-C" >Button C</v-btn>
         <v-btn class="button-D" >Button D</v-btn>
+        </div>
       <div class="page-section-content">
       </div>
     </div>
     <div class="page-info">
         <div class="page-info" style="background: radial-gradient( circle, #7d6ae7, #56a2d5) no-repeat;">
       <div class="page-info-title">Home, About Us, Team, Services, Blog, Contact Us</div>
-      <div class="page-info-content">
+      <div class="page-info-content"> @2019
       </div>
       </div>
     </div>
-    </div>
-  </div>
-</template>
+</div>
+  </template>
 
 <script>
 export default {
@@ -215,12 +215,11 @@ export default {
 }
 
 .page-info-content {
-    display: flex;
-    bottom: 0;
-    position: absolute;
-    left: 5%;
-    right: 5%;
-    top: 10vh;
+    font-size: 1vw;
+    color: #444; 
+    position: relative;
+    text-align: center;
+    top: 5vh;
 }
 
 *::-webkit-scrollbar {
