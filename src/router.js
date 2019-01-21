@@ -24,10 +24,9 @@ export default new Router({
       component: () => import("./views/Join.vue")
     },
     {
-      path: "/dashboard/:username",
+      path: "/dashboard",
       name: "dashboard",
       component: () => import("./views/Dashboard.vue"),
-      props: { username: "" }
     }
   ]
 });

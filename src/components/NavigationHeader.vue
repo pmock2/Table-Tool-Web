@@ -17,8 +17,8 @@
         <v-toolbar-title to="/">{{appTitle}}</v-toolbar-title>
       </router-link>
       <v-spacer class="hidden-sm-and-down"></v-spacer>
-      <v-btn flat class="hidden-sm-and-down" to="/sign-in">SIGN IN</v-btn>
-      <v-btn color="lighten-1" class="hidden-sm-and-down join-button" to="/join">JOIN</v-btn>
+      <v-btn flat class="hidden-sm-and-down" to="/sign-in">Log In</v-btn>
+      <v-btn color="lighten-1" class="hidden-sm-and-down join-button" to="/join">Sign Up</v-btn>
     </v-toolbar>
   </span>
 </template>
