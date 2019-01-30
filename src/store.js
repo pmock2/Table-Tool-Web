@@ -13,7 +13,10 @@ export default new Vuex.Store({
       test: "test",
       test2: "test2 is cool"
     },
-    campaigns: []
+    campaigns: [],
+    flags: {
+      isAuthenticated: false
+    }
   },
   getters: Getters,
   mutations: Mutations,

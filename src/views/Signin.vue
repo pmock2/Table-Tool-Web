@@ -64,6 +64,7 @@ export default {
         this.$store
           .dispatch("login", oData)
           .then(res => {
+            this.$store.commit("setAuthenticated", true);
             this.$router.push("dashboard");
           })
           .catch(error => {
