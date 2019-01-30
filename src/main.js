@@ -3,6 +3,7 @@ import "./plugins/vuetify";
 import App from "./App.vue";
 import router from "./router";
 import store from "./store";
+import mixins from "./mixins/main";
 
 Vue.config.productionTip = false;
 
@@ -11,3 +12,7 @@ new Vue({
   store,
   render: h => h(App)
 }).$mount("#app");
+
+Vue.mixin({
+  methods: mixins
+})

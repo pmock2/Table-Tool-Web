@@ -12,17 +12,6 @@ const signup = (state, data) => {
                 reject(error.response.data);
             })
     });
-    //     fetch(url, {
-    //             method: "POST", // or 'PUT'
-    //             body: JSON.stringify(data), // data can be `string` or {object}!
-    //             headers: {
-    //                 "Content-Type": "application/json"
-    //             }
-    //         })
-    //         .then(res => res.json())
-    //         .then(response => resolve(response))
-    //         .catch(error => reject(error));
-    // });
 }
 
 const login = (state, data) => {
@@ -37,31 +26,43 @@ const login = (state, data) => {
                 reject(error.response.data);
             })
     });
+}
+const logout = (state, data) => {
+    return new Promise((resolve, reject) => {
+        let url = state.getters.baseUrl + "/session";
 
-    //     fetch(url, {
-    //             method: "POST", // or 'PUT'
-    //             body: JSON.stringify(data), // data can be `string` or {object}!
-    //             headers: {
-    //                 "Content-Type": "application/json"
-    //             },
-    //             credentials: 'include',
-    //         })
-    //         // .then(res => res.json())
-    //         .then(response => {
-    //             if (response.status >= 400 && response.status < 600) {
-    //                 throw new Error("Bad response from server");
-    //             }
-    //             resolve(response)
-    //         })
-    //         .catch(error => reject(error));
-    // });
+        Axios.delete(url)
+            .then(response => {
+                resolve(response);
+            })
+            .catch(error => {
+                reject(error.response.data);
+            })
+    });
 }
 
+const getCampaigns = (state, data) => {
+    return new Promise((resolve, reject) => {
+        let url = state.getters.baseUrl + "/campaign";
 
+        Axios.get(url)
+            .then(response => {
+                resolve(response.data);
+            })
+            .catch(error => {
+                reject({
+                    msg: error.response.data,
+                    reauthenticate: error.response.status == 401
+                })
+            })
+    });
+}
 
 
 
 export default {
     signup,
-    login
+    login,
+    logout,
+    getCampaigns
 };
