@@ -53,33 +53,22 @@ export default {
   },
   methods: {
     login() {
-      var url = `http://127.0.0.1:3001/login?userName=${this.email}&password=${this.password}`;
+      var oData = {
+        userName: this.email,
+        password: this.password
+      };
+
       if (this.email === "" || this.password === "") {
-        this.status = "Please fill out all forms";
+        this.status = "Please fill in your login details";
       } else {
-        fetch(url, {
-          method: "GET", // or 'PUT'
-          headers: {
-            "Content-Type": "application/json",
-          },
-          credentials: 'include',
-        })
+        this.$store
+          .dispatch("login", oData)
           .then(res => {
-            console.log(res.status);
-            if (res.status === 200) {
-              //good, go to dashboard
-              
-              this.$router.push('dashboard');
-            } else if (res.status === 400) {
-              //bad login
-              console.log("bad login");
-              this.status = "Incorrect username or password. Try again!";
-            } else {
-              //something went wrong
-              this.status = "Something went wrong when sending the request";
-            }
+            this.$router.push("dashboard");
           })
-          .catch(error => console.error("Error:", error));
+          .catch(error => {
+            alert(error);
+          });
       }
     }
   }

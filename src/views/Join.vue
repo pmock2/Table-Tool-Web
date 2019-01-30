@@ -79,22 +79,27 @@ export default {
       }
       var url = "http://localhost:3001/account/register";
 
-      var data = {
+      var oData = {
         userName: this.userName,
         password: this.password,
         email: this.email
       };
 
-      fetch(url, {
-        method: "POST", // or 'PUT'
-        body: JSON.stringify(data), // data can be `string` or {object}!
-        headers: {
-          "Content-Type": "application/json"
-        }
-      })
-        .then(res => res.json())
-        .then(response => console.log("Success:", JSON.stringify(response)))
-        .catch(error => console.error("Error:", error));
+      this.$store
+        .dispatch("signup", oData)
+        .then(res => console.log(res))
+        .catch(error => console.error(error));
+
+      // fetch(url, {
+      //   method: "POST", // or 'PUT'
+      //   body: JSON.stringify(data), // data can be `string` or {object}!
+      //   headers: {
+      //     "Content-Type": "application/json"
+      //   }
+      // })
+      //   .then(res => res.json())
+      //   .then(response => console.log("Success:", JSON.stringify(response)))
+      //   .catch(error => console.error("Error:", error));
       //Handle response texts
     }
   }
