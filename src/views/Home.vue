@@ -4,8 +4,6 @@
       <div class="title-container">
         <div class="page-title">The Table Tool</div>
         <div class="page-sub-title">A Tool for DMs and Their Players</div>
-        <!-- <div>{{ $store.getters.user.test2 }}</div> -->
-        <div>{{ todos }}</div>
         <v-btn class="get-started-button" to="/join">Get Started</v-btn>
       </div>
     </div>
@@ -24,11 +22,6 @@
 export default {
   name: "home",
   components: {},
-  computed: {
-    todos: function() {
-      //   debugger;
-    }
-  }
 };
 </script>
 

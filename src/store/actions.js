@@ -4,7 +4,7 @@ const signup = (state, data) => {
     return new Promise((resolve, reject) => {
         let url = state.getters.baseUrl + "/account";
 
-        Axios.post(url, data)
+        Axios.post(url, data, {withCredentials: true})
             .then(response => {
                 resolve(response);
             })
@@ -18,7 +18,7 @@ const login = (state, data) => {
     return new Promise((resolve, reject) => {
         let url = state.getters.baseUrl + "/session";
 
-        Axios.post(url, data)
+        Axios.post(url, data, {withCredentials: true})
             .then(response => {
                 resolve(response);
             })
@@ -31,7 +31,7 @@ const logout = (state, data) => {
     return new Promise((resolve, reject) => {
         let url = state.getters.baseUrl + "/session";
 
-        Axios.delete(url)
+        Axios.delete(url, {}, {withCredentials: true})
             .then(response => {
                 resolve(response);
             })
@@ -45,7 +45,7 @@ const getCampaigns = (state, data) => {
     return new Promise((resolve, reject) => {
         let url = state.getters.baseUrl + "/campaign";
 
-        Axios.get(url)
+        Axios.get(url, {withCredentials: true})
             .then(response => {
                 resolve(response.data);
             })
