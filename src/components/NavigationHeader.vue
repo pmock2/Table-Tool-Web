@@ -17,8 +17,10 @@
         <v-toolbar-title to="/">{{appTitle}}</v-toolbar-title>
       </router-link>
       <v-spacer class="hidden-sm-and-down"></v-spacer>
-      <v-btn flat class="hidden-sm-and-down" to="/sign-in">Log In</v-btn>
-      <v-btn color="lighten-1" class="hidden-sm-and-down join-button" to="/join">Sign Up</v-btn>
+      <div v-if="!isAuthenticated">
+        <v-btn flat class="hidden-sm-and-down" to="/sign-in">Log In</v-btn>
+        <v-btn color="lighten-1" class="hidden-sm-and-down join-button" to="/join">Sign Up</v-btn>
+      </div>
     </v-toolbar>
   </span>
 </template>
@@ -34,6 +36,11 @@ export default {
         { title: "Join", id: "/join" }
       ]
     };
+  },
+  computed: {
+    isAuthenticated() {
+      return this.$store.getters.isAuthenticated;
+    }
   }
 };
 </script>
