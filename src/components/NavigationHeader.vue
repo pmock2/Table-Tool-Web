@@ -21,6 +21,10 @@
         <v-btn flat class="hidden-sm-and-down" to="/sign-in">Log In</v-btn>
         <v-btn color="lighten-1" class="hidden-sm-and-down join-button" to="/join">Sign Up</v-btn>
       </div>
+      <div v-else>
+        <v-btn flat class="hidden-sm-and-down" to="/dashboard">Dashboard</v-btn>
+        <v-btn color="lighten-1" class="hidden-sm-and-down join-button" v-on:click="logout">Log Out</v-btn>
+      </div>
     </v-toolbar>
   </span>
 </template>
@@ -40,6 +44,18 @@ export default {
   computed: {
     isAuthenticated() {
       return this.$store.getters.isAuthenticated;
+    }
+  },
+  methods: {
+    logout() {
+      this.$store
+        .dispatch("logout")
+        .then(res => {
+        })
+        .catch(error => {
+          alert(error);
+        });
+        
     }
   }
 };

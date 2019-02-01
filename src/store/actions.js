@@ -31,7 +31,7 @@ const logout = (state, data) => {
     return new Promise((resolve, reject) => {
         let url = state.getters.baseUrl + "/session";
 
-        Axios.delete(url, {}, {withCredentials: true})
+        Axios.delete(url, {withCredentials: true})
             .then(response => {
                 resolve(response);
             })
