@@ -4,10 +4,12 @@
     <card name="test" description="test test" icon="/"></card>
     <v-btn v-on:click="onPressClick">Get Campaigns</v-btn>
     <v-btn v-on:click="logout">Log out</v-btn>-->
-    <div class="dashboard-title">Dashboard</div>
-    <div class="dashboard-description">
-      Welcome to your dashboard! This page will display all content that is relevent to you. Each campaign, group, and character you are associated with
-      will appear on this page.
+    <div class="page-header">
+      <div class="dashboard-title">Dashboard</div>
+      <div class="dashboard-description">
+        Welcome to your dashboard! This page will display all content that is relevent to you. Each campaign, group, and character you are associated with
+        will appear on this page.
+      </div>
     </div>
     <div class="options-bar">
       <v-btn color="white darken-1" style="background:#e6321f" flat>Create Campaign</v-btn>
@@ -95,6 +97,10 @@ export default {
 .dashboard-page {
   padding: 20px;
   color: white;
+}
+
+.page-header {
+  
 }
 
 .dashboard-title {
