@@ -91,6 +91,7 @@ body[data-dark="true"] {
 }
 
 .app-square-space {
+  box-sizing: unset !important;
   color: #444;
   width: 190px;
   display: inline-block;
@@ -103,6 +104,10 @@ body[data-dark="true"] {
   cursor: pointer;
   background: rgb(234, 235, 237);
   box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.9);
+}
+
+.app-square-space div {
+  box-sizing: unset !important;
 }
 
 .app-square-space[data-showBlocker="true"] {
@@ -203,7 +208,7 @@ body[data-dark="true"] {
 
 .square-flip-container {
   display: inline-block;
-  margin: 0 20px calc(25px + 0.25%);
+  margin: 0 40px calc(25px + 0.25%);
 }
 
 .square-flip-container,
@@ -299,7 +304,8 @@ body[data-dark="true"] {
   padding: 7px 0 1px 0;
   font-size: 15px;
   left: 10%;
-  cursor: pointer;
+  cursor: pointer;  
+  box-sizing: unset;
 }
 
 .back-section:hover {

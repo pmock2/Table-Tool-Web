@@ -24,7 +24,6 @@
             </v-layout>
             <br />
             <v-flex xs6>
-              <UserSearch />
             </v-flex>
           </v-card-text>
           <v-card-actions>
