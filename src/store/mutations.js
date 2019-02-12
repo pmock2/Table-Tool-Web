@@ -8,10 +8,14 @@ const setAuthenticated = (state, bAuthenticated) => {
     state.flags.isAuthenticated = bAuthenticated;
 }
 
+const setCampaigns = (state, campaigns) => {
+    state.campaigns = campaigns;
+};
 
 
 
 export default {
     getCampaigns,
-    setAuthenticated
+    setAuthenticated,
+    setCampaigns
 };

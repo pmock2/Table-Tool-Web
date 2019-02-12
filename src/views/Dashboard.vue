@@ -19,30 +19,9 @@
     </div>
     <div class="card-section-container">
       <div class="card-section">
-        <card name="test" description="test test" icon="/"></card>
-        <card name="test" description="test test" icon="/"></card>
-        <card name="test" description="test test" icon="/"></card>
-        <card name="test" description="test test" icon="/"></card>
-        <card name="test" description="test test" icon="/"></card>
-        <card name="test" description="test test" icon="/"></card>
-        <card name="test" description="test test" icon="/"></card>
-        <card name="test" description="test test" icon="/"></card>
-        <card name="test" description="test test" icon="/"></card>
-        <card name="test" description="test test" icon="/"></card>
-        <card name="test" description="test test" icon="/"></card>
-        <card name="test" description="test test" icon="/"></card>
-        <card name="test" description="test test" icon="/"></card>
-        <card name="test" description="test test" icon="/"></card>
-        <card name="test" description="test test" icon="/"></card>
-        <card name="test" description="test test" icon="/"></card>
-        <card name="test" description="test test" icon="/"></card>
-        <card name="test" description="test test" icon="/"></card>
-        <card name="test" description="test test" icon="/"></card>
-        <card name="test" description="test test" icon="/"></card>
-        <card name="test" description="test test" icon="/"></card>
-        <card name="test" description="test test" icon="/"></card>
-        <card name="test" description="test test" icon="/"></card>
-        <card name="test" description="test test" icon="/"></card>
+        <div v-for="(campaign) in campaigns" :key="campaign.id">
+          <card :name="campaign.name" :description="campaign.description" icon="/"></card>
+        </div>
       </div>
     </div>
   </div>
@@ -62,6 +41,11 @@ export default {
     return {
       dropdown_font: ["Arial", "Calibri", "Courier", "Verdana"]
     };
+  },
+  computed: {
+    campaigns: function() {
+      return this.$store.getters.campaigns;
+    }
   },
   methods: {
     onPressClick() {
@@ -90,6 +74,23 @@ export default {
           alert(error);
         });
     }
+  },
+  beforeMount() {
+    this.$store
+      .dispatch("getCampaigns")
+      .then(res => {
+        // this.$router.push("dashboard");
+        console.log("Campaigns:");
+        console.log(res);
+        this.$store.commit("setCampaigns", res);
+      })
+      .catch(error => {
+        if (error.reauthenticate) {
+          this.reauthenticate(this.$router);
+        } else {
+          alert(error.msg);
+        }
+      });
   }
 };
 </script>
@@ -100,7 +101,6 @@ export default {
 }
 
 .page-header {
-  
 }
 
 .dashboard-title {
